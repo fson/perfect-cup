@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Animated,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -190,7 +191,7 @@ const styles = StyleSheet.create({
   buttonLabel: {
     color: "white",
     fontSize: 60,
-    lineHeight: 60,
+    lineHeight: Platform.OS === "android" ? 40 : 60,
     fontWeight: "200",
   },
   cups: {

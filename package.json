@@ -19,6 +19,7 @@
     "react-navigation": "^1.0.0-beta.15"
   },
   "devDependencies": {
-    "jest-expo": "^22.0.0"
+    "jest-expo": "^22.0.0",
+    "prettier": "^1.7.4"
   }
 }

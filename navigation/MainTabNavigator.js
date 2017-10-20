@@ -8,6 +8,7 @@ import Colors from '../constants/Colors';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import WeighingScreen from '../screens/WeighingScreen';
 
 export default TabNavigator(
   {
@@ -20,6 +21,9 @@ export default TabNavigator(
     Settings: {
       screen: SettingsScreen,
     },
+    Weighing: {
+      screen: WeighingScreen,
+    }
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -28,6 +32,7 @@ export default TabNavigator(
         let iconName;
         switch (routeName) {
           case 'Home':
+          case 'Weighing':
             iconName = Platform.OS === 'ios'
               ? `ios-information-circle${focused ? '' : '-outline'}`
               : 'md-information-circle';

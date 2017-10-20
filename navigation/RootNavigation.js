@@ -1,10 +1,9 @@
-import { Notifications } from 'expo';
-import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import { Notifications } from "expo";
+import React from "react";
+import { StackNavigator } from "react-navigation";
 
-import MainTabNavigator from './MainTabNavigator';
-import WeighingScreen from '../screens/WeighingScreen';
-import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
+import WeighingScreen from "../screens/WeighingScreen";
+import registerForPushNotificationsAsync from "../api/registerForPushNotificationsAsync";
 
 const RootStackNavigator = StackNavigator(
   {
@@ -15,10 +14,10 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: () => ({
       headerTitleStyle: {
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
     }),
-  }
+  },
 );
 
 export default class RootNavigator extends React.Component {
@@ -43,13 +42,13 @@ export default class RootNavigator extends React.Component {
 
     // Watch for incoming notifications
     this._notificationSubscription = Notifications.addListener(
-      this._handleNotification
+      this._handleNotification,
     );
   }
 
   _handleNotification = ({ origin, data }) => {
     console.log(
-      `Push notification ${origin} with data: ${JSON.stringify(data)}`
+      `Push notification ${origin} with data: ${JSON.stringify(data)}`,
     );
   };
 }

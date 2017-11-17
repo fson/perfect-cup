@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Hello Expo!",
   "author": null,
-  "license": "",
+  "license": "MIT",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "test": "node ./node_modules/jest/bin/jest.js --watch"
@@ -11,9 +11,10 @@
   "jest": {
     "preset": "jest-expo"
   },
+  "prettier": {},
   "dependencies": {
-    "@expo/samples": "2.1.1",
     "expo": "^23.0.0",
+    "luxon": "^0.0.19",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
     "react-navigation": "^1.0.0-beta.19"

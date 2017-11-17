@@ -8,47 +8,10 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { ExpoLinksView } from "@expo/samples";
 import { Ionicons } from "@expo/vector-icons";
 
+import Button from "../components/Button";
 import Colors from "../constants/Colors";
-
-class Button extends React.Component {
-  state = { scale: new Animated.Value(1) };
-
-  handlePress = event => {
-    Animated.sequence([
-      Animated.timing(this.state.scale, {
-        toValue: 0.9,
-        duration: 50,
-        useNativeDriver: true,
-      }),
-      Animated.spring(this.state.scale, {
-        toValue: 1,
-        friction: 3,
-        tension: 120,
-        useNativeDriver: true,
-      }),
-    ]).start();
-    this.props.onPress(event);
-  };
-
-  render() {
-    return (
-      <TouchableWithoutFeedback
-        style={styles.button}
-        onPress={this.handlePress}>
-        <Animated.View
-          style={[
-            styles.buttonInlay,
-            { transform: [{ scale: this.state.scale }] },
-          ]}>
-          <Text style={styles.buttonLabel}>{this.props.title}</Text>
-        </Animated.View>
-      </TouchableWithoutFeedback>
-    );
-  }
-}
 
 const CUP_IN_ML = 350;
 
@@ -75,7 +38,7 @@ const State = {
 
 export default class WeighingScreen extends React.Component {
   static navigationOptions = {
-    title: "Perfect Cup",
+    title: "Measure",
   };
 
   state = State.fromCups(2, 14);
@@ -175,24 +138,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-  },
-  button: {},
-  buttonInlay: {
-    margin: 10,
-    width: 60,
-    height: 60,
-    borderWidth: 3,
-    borderColor: "white",
-    borderRadius: 30,
-    backgroundColor: "transparent",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  buttonLabel: {
-    color: "white",
-    fontSize: 60,
-    lineHeight: Platform.OS === "android" ? 40 : 60,
-    fontWeight: "200",
   },
   cups: {
     fontSize: 60,
